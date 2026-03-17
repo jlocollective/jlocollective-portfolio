@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jonathan Lopez — AI Enablement Portfolio | JLO Collective</title>
+
+<!-- SEO -->
+<meta name="description" content="Jonathan Lopez is an AI Enablement practitioner building AI-powered tools, workflows, and products across enterprise, startup, and nonprofit contexts. Founder of JLO Collective LLC.">
+<meta name="author" content="Jonathan Lopez">
+<meta name="keywords" content="AI Enablement, Jonathan Lopez, JLO Collective, SIGND.AI, KingdomOS, ServiceNow, AI Portfolio, Prompt Engineering, AI Product">
+<link rel="canonical" href="https://jlocollective.com">
+
+<!-- Open Graph (LinkedIn, Slack, iMessage previews) -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://jlocollective.com">
+<meta property="og:title" content="Jonathan Lopez — AI Enablement Portfolio">
+<meta property="og:description" content="AI Enablement practitioner. Building SIGND.AI, KingdomOS, and internal AI tooling at ServiceNow. Founder of JLO Collective LLC.">
+<meta property="og:image" content="https://jlocollective.com/og-preview.png">
+
+<!-- Twitter / X Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:url" content="https://jlocollective.com">
+<meta name="twitter:title" content="Jonathan Lopez — AI Enablement Portfolio">
+<meta name="twitter:description" content="AI Enablement practitioner. Building SIGND.AI, KingdomOS, and internal AI tooling at ServiceNow.">
+<meta name="twitter:image" content="https://jlocollective.com/og-preview.png">
+
+<!-- Favicon (emoji fallback — replace with real favicon.ico when ready) -->
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='12' fill='%230d0d0d'/><text y='.9em' font-size='80' x='10'>⚡</text></svg>">
+
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --emerald: #10b981;
+    --charcoal: #0d0d0d;
+    --charcoal-2: #111111;
+    --charcoal-3: #161616;
+    --gold: #f59e0b;
+    --off-white: #f4f4f5;
+    --muted: #6b7280;
+    --emerald-glow: 0 0 20px rgba(16, 185, 129, 0.15);
+    --emerald-border: 1px solid rgba(16, 185, 129, 0.2);
+    --card-bg: rgba(255,255,255,0.03);
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: var(--charcoal); color: var(--off-white); font-family: 'DM Sans', sans-serif; min-height: 100vh; overflow-x: hidden; }
+  body::before { content: ''; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E"); pointer-events: none; z-index: 9999; opacity: 0.4; }
+  .sidebar { position: fixed; left: 0; top: 0; width: 240px; height: 100vh; background: var(--charcoal-2); border-right: var(--emerald-border); display: flex; flex-direction: column; padding: 32px 0; z-index: 100; }
+  .sidebar-logo { padding: 0 24px 32px; border-bottom: var(--emerald-border); }
+  .logo-mark { font-family: 'Bebas Neue', sans-serif; font-size: 22px; letter-spacing: 3px; color: var(--emerald); line-height: 1; }
+  .logo-sub { font-family: 'JetBrains Mono', monospace; font-size: 9px; color: var(--muted); letter-spacing: 2px; margin-top: 4px; }
+  .sidebar-nav { padding: 24px 0; flex: 1; }
+  .nav-label { font-family: 'JetBrains Mono', monospace; font-size: 9px; letter-spacing: 2px; color: var(--muted); padding: 0 24px; margin-bottom: 8px; text-transform: uppercase; }
+  .nav-item { display: flex; align-items: center; gap: 10px; padding: 10px 24px; cursor: pointer; color: var(--muted); font-size: 13px; font-weight: 500; transition: all 0.15s; border-left: 2px solid transparent; }
+  .nav-item:hover { color: var(--off-white); background: rgba(255,255,255,0.02); }
+  .nav-item.active { color: var(--emerald); border-left-color: var(--emerald); background: rgba(16, 185, 129, 0.05); }
+  .nav-dot { width: 6px; height: 6px; border-radius: 50%; background: currentColor; flex-shrink: 0; }
+  .sidebar-footer { padding: 24px; border-top: var(--emerald-border); }
+  .owner-tag { font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--muted); }
+  .owner-name { font-family: 'DM Sans', sans-serif; font-size: 13px; font-weight: 600; color: var(--off-white); margin-top: 2px; }
+  .owner-role { font-family: 'JetBrains Mono', monospace; font-size: 9px; color: var(--emerald); margin-top: 2px; letter-spacing: 1px; }
+  .main { margin-left: 240px; padding: 40px 48px; min-height: 100vh; }
+  .page-header { margin-bottom: 40px; animation: fadeUp 0.4s ease both; }
+  .page-eyebrow { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 3px; color: var(--emerald); text-transform: uppercase; margin-bottom: 8px; }
+  .page-title { font-family: 'Bebas Neue', sans-serif; font-size: 52px; letter-spacing: 3px; color: var(--off-white); line-height: 1; }
+  .page-title span { color: var(--emerald); }
+  .page-subtitle { font-size: 14px; color: var(--muted); margin-top: 8px; max-width: 560px; line-height: 1.6; }
+  .stat-strip { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-bottom: 40px; animation: fadeUp 0.4s ease 0.1s both; }
+  .stat-card { background: var(--card-bg); border: var(--emerald-border); border-radius: 8px; padding: 20px 24px; transition: all 0.2s; }
+  .stat-card:hover { transform: translateY(-2px); box-shadow: var(--emerald-glow); border-color: rgba(16, 185, 129, 0.4); }
+  .stat-label { font-family: 'JetBrains Mono', monospace; font-size: 9px; letter-spacing: 2px; color: var(--muted); text-transform: uppercase; margin-bottom: 8px; }
+  .stat-value { font-family: 'JetBrains Mono', monospace; font-size: 36px; font-weight: 500; color: var(--emerald); line-height: 1; }
+  .stat-value.gold { color: var(--gold); }
+  .stat-sub { font-size: 11px; color: var(--muted); margin-top: 4px; }
+  .filter-bar { display: flex; align-items: center; gap: 8px; margin-bottom: 28px; flex-wrap: wrap; animation: fadeUp 0.4s ease 0.15s both; }
+  .filter-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--muted); letter-spacing: 1px; margin-right: 4px; }
+  .filter-btn { padding: 6px 14px; border-radius: 4px; border: 1px solid rgba(255,255,255,0.08); background: transparent; color: var(--muted); font-family: 'DM Sans', sans-serif; font-size: 12px; font-weight: 500; cursor: pointer; transition: all 0.15s; }
+  .filter-btn:hover { color: var(--off-white); border-color: rgba(255,255,255,0.2); }
+  .filter-btn.active { background: rgba(16, 185, 129, 0.1); border-color: var(--emerald); color: var(--emerald); }
+  .view { display: none; }
+  .view.active { display: block; }
+  .project-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(380px, 1fr)); gap: 20px; }
+  .project-card { background: var(--card-bg); border: var(--emerald-border); border-radius: 10px; padding: 28px; transition: all 0.2s; animation: fadeUp 0.4s ease both; cursor: pointer; position: relative; overflow: hidden; }
+  .project-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, var(--emerald), transparent); opacity: 0; transition: opacity 0.2s; }
+  .project-card:hover { transform: translateY(-3px); box-shadow: var(--emerald-glow); border-color: rgba(16, 185, 129, 0.4); }
+  .project-card:hover::before { opacity: 1; }
+  .card-header { display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 16px; }
+  .card-name { font-family: 'Bebas Neue', sans-serif; font-size: 22px; letter-spacing: 2px; color: var(--off-white); line-height: 1; }
+  .status-badge { font-family: 'JetBrains Mono', monospace; font-size: 9px; letter-spacing: 1.5px; padding: 4px 10px; border-radius: 4px; text-transform: uppercase; flex-shrink: 0; margin-left: 12px; }
+  .status-active { background: rgba(16, 185, 129, 0.12); color: var(--emerald); border: 1px solid rgba(16, 185, 129, 0.3); }
+  .status-paused { background: rgba(245, 158, 11, 0.12); color: var(--gold); border: 1px solid rgba(245, 158, 11, 0.3); }
+  .status-completed { background: rgba(99, 102, 241, 0.12); color: #818cf8; border: 1px solid rgba(99, 102, 241, 0.3); }
+  .status-planned { background: rgba(107, 114, 128, 0.12); color: var(--muted); border: 1px solid rgba(107, 114, 128, 0.3); }
+  .card-category { font-family: 'JetBrains Mono', monospace; font-size: 9px; letter-spacing: 1.5px; color: var(--muted); text-transform: uppercase; margin-bottom: 12px; }
+  .card-summary { font-size: 13px; line-height: 1.65; color: rgba(244, 244, 245, 0.7); margin-bottom: 20px; }
+  .card-meta { display: flex; flex-direction: column; gap: 8px; margin-bottom: 20px; }
+  .meta-row { display: flex; align-items: flex-start; gap: 10px; font-size: 12px; }
+  .meta-key { font-family: 'JetBrains Mono', monospace; font-size: 9px; letter-spacing: 1px; color: var(--muted); text-transform: uppercase; min-width: 80px; padding-top: 1px; }
+  .meta-val { color: var(--off-white); line-height: 1.4; }
+  .meta-val.impact { color: var(--emerald); font-weight: 500; }
+  .card-tools { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 20px; }
+  .tool-tag { font-family: 'JetBrains Mono', monospace; font-size: 9px; letter-spacing: 1px; padding: 3px 8px; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 3px; color: var(--muted); }
+  .card-footer { display: flex; align-items: center; justify-content: space-between; padding-top: 16px; border-top: 1px solid rgba(255,255,255,0.06); }
+  .card-date { font-family: 'JetBrains Mono', monospace; font-size: 9px; color: var(--muted); letter-spacing: 1px; }
+  .public-tag { font-family: 'JetBrains Mono', monospace; font-size: 9px; color: var(--emerald); letter-spacing: 1px; }
+  .private-tag { font-family: 'JetBrains Mono', monospace; font-size: 9px; color: var(--muted); letter-spacing: 1px; }
+  .milestone-chip { display: flex; align-items: center; gap: 6px; padding: 8px 12px; background: rgba(16, 185, 129, 0.05); border: 1px solid rgba(16, 185, 129, 0.15); border-radius: 6px; margin-bottom: 20px; }
+  .milestone-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--emerald); animation: pulse 2s infinite; flex-shrink: 0; }
+  .milestone-text { font-size: 11px; color: rgba(16, 185, 129, 0.8); }
+  .export-panel { background: var(--card-bg); border: var(--emerald-border); border-radius: 10px; padding: 36px; max-width: 800px; animation: fadeUp 0.4s ease both; }
+  .export-title { font-family: 'Bebas Neue', sans-serif; font-size: 28px; letter-spacing: 3px; color: var(--off-white); margin-bottom: 8px; }
+  .export-sub { font-size: 13px; color: var(--muted); margin-bottom: 32px; line-height: 1.6; }
+  .export-format-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin-bottom: 32px; }
+  .format-card { padding: 20px; border: var(--emerald-border); border-radius: 8px; background: rgba(255,255,255,0.02); cursor: pointer; transition: all 0.15s; }
+  .format-card:hover { background: rgba(16, 185, 129, 0.05); border-color: rgba(16, 185, 129, 0.4); }
+  .format-name { font-family: 'Bebas Neue', sans-serif; font-size: 18px; letter-spacing: 2px; color: var(--off-white); margin-bottom: 4px; }
+  .format-desc { font-size: 12px; color: var(--muted); line-height: 1.5; }
+  .narrative-block { padding: 24px; background: rgba(16, 185, 129, 0.04); border: 1px solid rgba(16, 185, 129, 0.15); border-radius: 8px; margin-bottom: 24px; }
+  .narrative-label { font-family: 'JetBrains Mono', monospace; font-size: 9px; letter-spacing: 2px; color: var(--emerald); text-transform: uppercase; margin-bottom: 12px; }
+  .narrative-text { font-size: 13px; line-height: 1.75; color: var(--off-white); }
+  .timeline { position: relative; padding-left: 32px; max-width: 720px; }
+  .timeline::before { content: ''; position: absolute; left: 7px; top: 8px; bottom: 0; width: 1px; background: rgba(16, 185, 129, 0.2); }
+  .timeline-item { position: relative; margin-bottom: 36px; animation: fadeUp 0.4s ease both; }
+  .timeline-dot { position: absolute; left: -28px; top: 6px; width: 14px; height: 14px; border-radius: 50%; background: var(--charcoal); border: 2px solid var(--emerald); }
+  .timeline-dot.active { background: var(--emerald); box-shadow: 0 0 8px rgba(16, 185, 129, 0.5); }
+  .timeline-date { font-family: 'JetBrains Mono', monospace; font-size: 9px; letter-spacing: 1.5px; color: var(--muted); margin-bottom: 6px; text-transform: uppercase; }
+  .timeline-name { font-family: 'Bebas Neue', sans-serif; font-size: 20px; letter-spacing: 2px; color: var(--off-white); margin-bottom: 4px; }
+  .timeline-summary { font-size: 13px; color: rgba(244, 244, 245, 0.6); line-height: 1.6; }
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
+  @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
+  ::-webkit-scrollbar { width: 4px; }
+  ::-webkit-scrollbar-track { background: transparent; }
+  ::-webkit-scrollbar-thumb { background: rgba(16, 185, 129, 0.3); border-radius: 2px; }
+  @media (max-width: 900px) { .sidebar { width: 200px; } .main { margin-left: 200px; padding: 24px; } .stat-strip { grid-template-columns: repeat(2, 1fr); } .project-grid { grid-template-columns: 1fr; } }
+  @media (max-width: 640px) { .sidebar { display: none; } .main { margin-left: 0; padding: 20px; } .page-title { font-size: 36px; } }
+</style>
+</head>
+<body>
+
+<aside class="sidebar">
+  <div class="sidebar-logo">
+    <div class="logo-mark">JLO.AI</div>
+    <div class="logo-sub">PORTFOLIO HUB</div>
+  </div>
+  <nav class="sidebar-nav">
+    <div class="nav-label">Navigation</div>
+    <div class="nav-item active" onclick="switchView('projects', this)"><div class="nav-dot"></div>All Projects</div>
+    <div class="nav-item" onclick="switchView('ai-enablement', this)"><div class="nav-dot"></div>AI Enablement</div>
+    <div class="nav-item" onclick="switchView('timeline', this)"><div class="nav-dot"></div>Timeline</div>
+    <div class="nav-item" onclick="switchView('export', this)"><div class="nav-dot"></div>Portfolio Export</div>
+  </nav>
+  <div class="sidebar-footer">
+    <div class="owner-tag">PORTFOLIO OWNER</div>
+    <div class="owner-name">Jonathan Lopez</div>
+    <div class="owner-role">AI ENABLEMENT</div>
+  </div>
+</aside>
+
+<main class="main">
+  <div class="page-header">
+    <div class="page-eyebrow">JLO COLLECTIVE LLC</div>
+    <div class="page-title">AI <span>PORTFOLIO</span> HUB</div>
+    <div class="page-subtitle">Central registry for all AI projects — personal, entrepreneurial, and enterprise. Built for career development in AI Enablement.</div>
+  </div>
+
+  <div class="stat-strip">
+    <div class="stat-card"><div class="stat-label">Total Projects</div><div class="stat-value" id="stat-total">4</div><div class="stat-sub">Tracked in registry</div></div>
+    <div class="stat-card"><div class="stat-label">Active</div><div class="stat-value" id="stat-active">4</div><div class="stat-sub">Currently in progress</div></div>
+    <div class="stat-card"><div class="stat-label">AI Enablement</div><div class="stat-value gold" id="stat-ai">4</div><div class="stat-sub">Portfolio-eligible</div></div>
+    <div class="stat-card"><div class="stat-label">Public</div><div class="stat-value" id="stat-public">3</div><div class="stat-sub">Shareable in applications</div></div>
+  </div>
+
+  <!-- ALL PROJECTS VIEW -->
+  <div class="view active" id="view-projects">
+    <div class="filter-bar">
+      <span class="filter-label">FILTER:</span>
+      <button class="filter-btn active" onclick="filterCards('all', this)">All</button>
+      <button class="filter-btn" onclick="filterCards('AI Enablement', this)">AI Enablement</button>
+      <button class="filter-btn" onclick="filterCards('Entrepreneurial', this)">Entrepreneurial</button>
+      <button class="filter-btn" onclick="filterCards('ServiceNow', this)">ServiceNow</button>
+      <button class="filter-btn" onclick="filterCards('Personal', this)">Personal</button>
+    </div>
+    <div class="project-grid" id="project-grid">
+
+      <!-- SIGND.AI -->
+      <div class="project-card" data-category="AI Enablement Entrepreneurial" style="animation-delay:0.05s">
+        <div class="card-category">Entrepreneurial · AI Enablement</div>
+        <div class="card-header"><div class="card-name">SIGND.AI</div><div class="status-badge status-active">Active</div></div>
+        <div class="milestone-chip"><div class="milestone-dot"></div><div class="milestone-text">Beta: first attributable deal via SIGND.AI</div></div>
+        <div class="card-summary">AI-powered real estate outreach and lead conversion platform designed for non-technical agents. Automates SMS follow-up, lead nurturing, and deal pipeline management. Audience: real estate agents (proxy user: DJ).</div>
+        <div class="card-meta">
+          <div class="meta-row"><div class="meta-key">Impact</div><div class="meta-val impact">Beta live — measuring first attributable deal close</div></div>
+          <div class="meta-row"><div class="meta-key">Context</div><div class="meta-val">JLO Collective flagship product. TCPA-compliant outreach pipeline.</div></div>
+        </div>
+        <div class="card-tools"><span class="tool-tag">CLAUDE AI</span><span class="tool-tag">SMS AUTOMATION</span><span class="tool-tag">LEAD CONVERSION</span><span class="tool-tag">REAL ESTATE</span><span class="tool-tag">TCPA COMPLIANCE</span></div>
+        <div class="card-footer"><div class="card-date">STARTED: 2026</div><div class="public-tag">◉ PUBLIC</div></div>
+      </div>
+
+      <!-- ServiceNow -->
+      <div class="project-card" data-category="AI Enablement ServiceNow" style="animation-delay:0.1s">
+        <div class="card-category">ServiceNow · AI Enablement</div>
+        <div class="card-header"><div class="card-name">ServiceNow SAM AI Tooling</div><div class="status-badge status-active">Active</div></div>
+        <div class="milestone-chip"><div class="milestone-dot"></div><div class="milestone-text">Deploy first SAM tool in enterprise environment</div></div>
+        <div class="card-summary">Internal AI tooling initiative for Support Account Managers at ServiceNow. Builds Claude-powered workflows that reduce manual effort on P1/P2 case management, client communication, and reporting — with measurable productivity gains.</div>
+        <div class="card-meta">
+          <div class="meta-row"><div class="meta-key">Impact</div><div class="meta-val impact">Quantified reduction in P1/P2 case prep time for SAM team</div></div>
+          <div class="meta-row"><div class="meta-key">Context</div><div class="meta-val">Enterprise Claude account (ServiceNow). Internal deployment constraints.</div></div>
+        </div>
+        <div class="card-tools"><span class="tool-tag">CLAUDE ENTERPRISE</span><span class="tool-tag">SERVICENOW</span><span class="tool-tag">PROMPT ENGINEERING</span><span class="tool-tag">WORKFLOW AUTOMATION</span><span class="tool-tag">SAM PRODUCTIVITY</span></div>
+        <div class="card-footer"><div class="card-date">STARTED: 2026</div><div class="private-tag">◎ INTERNAL</div></div>
+      </div>
+
+      <!-- JLO Collective Ops -->
+      <div class="project-card" data-category="AI Enablement Entrepreneurial" style="animation-delay:0.15s">
+        <div class="card-category">Entrepreneurial · AI Enablement · Ops</div>
+        <div class="card-header"><div class="card-name">JLO Collective CEO Ops</div><div class="status-badge status-active">Active</div></div>
+        <div class="milestone-chip"><div class="milestone-dot"></div><div class="milestone-text">CEO dashboard fully shipped + maintained</div></div>
+        <div class="card-summary">CEO-level operating infrastructure for JLO Collective LLC. Includes interactive dashboards, brand enforcement systems, custom Claude skill library, workflow orchestration, and multi-project management tooling across SIGND.AI, KingdomOS, and ServiceNow.</div>
+        <div class="card-meta">
+          <div class="meta-row"><div class="meta-key">Impact</div><div class="meta-val impact">Enables multi-venture execution at enterprise discipline level</div></div>
+          <div class="meta-row"><div class="meta-key">Context</div><div class="meta-val">Full SKILL.md framework, brand system, CEO dashboard. Built entirely in Claude Projects.</div></div>
+        </div>
+        <div class="card-tools"><span class="tool-tag">CLAUDE AI</span><span class="tool-tag">HTML/CSS/JS</span><span class="tool-tag">SKILL.MD FRAMEWORK</span><span class="tool-tag">BRAND SYSTEMS</span><span class="tool-tag">AUTOMATION</span></div>
+        <div class="card-footer"><div class="card-date">STARTED: 2026</div><div class="public-tag">◉ PUBLIC</div></div>
+      </div>
+
+      <!-- KingdomOS -->
+      <div class="project-card" data-category="AI Enablement Entrepreneurial" style="animation-delay:0.2s">
+        <div class="card-category">Entrepreneurial · AI Enablement · SaaS</div>
+        <div class="card-header"><div class="card-name">KingdomOS</div><div class="status-badge status-active">Active</div></div>
+        <div class="milestone-chip"><div class="milestone-dot"></div><div class="milestone-text">Stripe billing live — Phase 1 exit condition</div></div>
+        <div class="card-summary">Kingdom-first church management SaaS platform. Multi-tenant operating system for churches — automating ministry ops, membership, events, worship scheduling, finances, and communications. Nonprofit initiative under JLO Collective LLC targeting 501(c)(3) filing at scale.</div>
+        <div class="card-meta">
+          <div class="meta-row"><div class="meta-key">Impact</div><div class="meta-val impact">Railway API + Vercel live. Core features shipped. Stripe billing is Phase 1 exit condition.</div></div>
+          <div class="meta-row"><div class="meta-key">Context</div><div class="meta-val">Full-stack SaaS: Node.js + React + PostgreSQL. Morning Brief automation committed (24 files, b283391). 50%+ net proceeds to Kingdom initiatives.</div></div>
+        </div>
+        <div class="card-tools"><span class="tool-tag">CLAUDE AI</span><span class="tool-tag">NODE.JS + REACT</span><span class="tool-tag">POSTGRESQL</span><span class="tool-tag">STRIPE</span><span class="tool-tag">RAILWAY + VERCEL</span><span class="tool-tag">BULLMQ</span></div>
+        <div class="card-footer"><div class="card-date">STARTED: 2026</div><div class="public-tag">◉ PUBLIC</div></div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- AI ENABLEMENT VIEW -->
+  <div class="view" id="view-ai-enablement">
+    <div class="narrative-block" style="max-width:720px; margin-bottom:32px;">
+      <div class="narrative-label">AI Enablement Narrative</div>
+      <div class="narrative-text">Jonathan Lopez is an AI Enablement practitioner with hands-on experience building AI-powered tools, workflows, and products across enterprise (ServiceNow), startup (JLO Collective / SIGND.AI), nonprofit SaaS (KingdomOS), and operational contexts. His work spans prompt engineering, workflow automation, agent design, and full-stack AI product development — applied directly to real business outcomes including SAM productivity, real estate lead conversion, church management automation, and enterprise internal tooling.</div>
+    </div>
+    <div class="project-grid">
+      <div class="project-card" style="animation-delay:0.05s">
+        <div class="card-category">AI Enablement · Enterprise</div>
+        <div class="card-header"><div class="card-name">ServiceNow SAM AI Tooling</div><div class="status-badge status-active">Active</div></div>
+        <div class="card-summary">Claude-powered productivity workflows for Support Account Managers. P1/P2 case automation, client communication drafting, and internal AI tooling deployed within ServiceNow's enterprise environment.</div>
+        <div class="card-meta">
+          <div class="meta-row"><div class="meta-key">Role</div><div class="meta-val">Support Account Manager → AI Enablement Lead (de facto)</div></div>
+          <div class="meta-row"><div class="meta-key">Impact</div><div class="meta-val impact">Quantified SAM productivity improvement on high-priority cases</div></div>
+        </div>
+        <div class="card-tools"><span class="tool-tag">CLAUDE ENTERPRISE</span><span class="tool-tag">PROMPT ENGINEERING</span><span class="tool-tag">AI WORKFLOW DESIGN</span></div>
+        <div class="card-footer"><div class="card-date">STARTED: 2026</div><div class="private-tag">◎ INTERNAL</div></div>
+      </div>
+      <div class="project-card" style="animation-delay:0.1s">
+        <div class="card-category">AI Enablement · Startup Product</div>
+        <div class="card-header"><div class="card-name">SIGND.AI</div><div class="status-badge status-active">Active</div></div>
+        <div class="card-summary">End-to-end AI product built from scratch — system design, agent prompting, user research, and beta launch. Demonstrates full-stack AI Enablement capabilities from concept to deployed product.</div>
+        <div class="card-meta">
+          <div class="meta-row"><div class="meta-key">Role</div><div class="meta-val">Founder + AI Product Architect</div></div>
+          <div class="meta-row"><div class="meta-key">Impact</div><div class="meta-val impact">Live beta, user research loop, conversion pipeline active</div></div>
+        </div>
+        <div class="card-tools"><span class="tool-tag">CLAUDE AI</span><span class="tool-tag">AGENT DESIGN</span><span class="tool-tag">USER RESEARCH</span></div>
+        <div class="card-footer"><div class="card-date">STARTED: 2026</div><div class="public-tag">◉ PUBLIC</div></div>
+      </div>
+      <div class="project-card" style="animation-delay:0.15s">
+        <div class="card-category">AI Enablement · Systems Design</div>
+        <div class="card-header"><div class="card-name">JLO AI Operating System</div><div class="status-badge status-active">Active</div></div>
+        <div class="card-summary">Custom Claude SKILL.md framework, brand enforcement automation, session discipline protocols, and multi-project orchestration — a proprietary AI operating system for running a multi-venture company.</div>
+        <div class="card-meta">
+          <div class="meta-row"><div class="meta-key">Role</div><div class="meta-val">AI Systems Architect + CEO</div></div>
+          <div class="meta-row"><div class="meta-key">Impact</div><div class="meta-val impact">10+ production skills built; CEO-grade output at velocity</div></div>
+        </div>
+        <div class="card-tools"><span class="tool-tag">CLAUDE AI</span><span class="tool-tag">SKILL FRAMEWORKS</span><span class="tool-tag">AI ORCHESTRATION</span></div>
+        <div class="card-footer"><div class="card-date">STARTED: 2026</div><div class="public-tag">◉ PUBLIC</div></div>
+      </div>
+      <div class="project-card" style="animation-delay:0.2s">
+        <div class="card-category">AI Enablement · Nonprofit SaaS</div>
+        <div class="card-header"><div class="card-name">KingdomOS</div><div class="status-badge status-active">Active</div></div>
+        <div class="card-summary">Full-stack SaaS built from scratch — Claude AI embedded for task classification, Morning Brief automation, and role-scoped assistant. Live on Railway + Vercel with multi-tenant PostgreSQL and JWT auth.</div>
+        <div class="card-meta">
+          <div class="meta-row"><div class="meta-key">Role</div><div class="meta-val">Founder + Full-Stack AI Product Architect</div></div>
+          <div class="meta-row"><div class="meta-key">Impact</div><div class="meta-val impact">Live platform, core features shipped, Phase 1 Stripe billing next</div></div>
+        </div>
+        <div class="card-tools"><span class="tool-tag">CLAUDE AI</span><span class="tool-tag">NODE.JS + REACT</span><span class="tool-tag">FULL-STACK ARCHITECTURE</span></div>
+        <div class="card-footer"><div class="card-date">STARTED: 2026</div><div class="public-tag">◉ PUBLIC</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TIMELINE VIEW -->
+  <div class="view" id="view-timeline">
+    <div class="timeline">
+      <div class="timeline-item" style="animation-delay:0.05s">
+        <div class="timeline-dot active"></div>
+        <div class="timeline-date">2026 — PRESENT</div>
+        <div class="timeline-name">Portfolio Hub</div>
+        <div class="timeline-summary">Central AI portfolio registry launched. Tracking 4 active projects across entrepreneurial, enterprise, nonprofit SaaS, and ops categories.</div>
+      </div>
+      <div class="timeline-item" style="animation-delay:0.08s">
+        <div class="timeline-dot active"></div>
+        <div class="timeline-date">2026 — PRESENT</div>
+        <div class="timeline-name">KingdomOS — Platform Launch</div>
+        <div class="timeline-summary">Church management SaaS live on Railway + Vercel. Multi-tenant PostgreSQL, JWT auth, member directory, Morning Brief automation shipped (24 files, commit b283391). Phase 1 blocker: Stripe billing.</div>
+      </div>
+      <div class="timeline-item" style="animation-delay:0.12s">
+        <div class="timeline-dot active"></div>
+        <div class="timeline-date">2026</div>
+        <div class="timeline-name">SIGND.AI — Beta Launch</div>
+        <div class="timeline-summary">AI real estate outreach platform enters beta with primary user DJ. TCPA-compliant SMS pipeline active. North star: first attributable deal close.</div>
+      </div>
+      <div class="timeline-item" style="animation-delay:0.16s">
+        <div class="timeline-dot active"></div>
+        <div class="timeline-date">2026</div>
+        <div class="timeline-name">ServiceNow AI Enablement Initiative</div>
+        <div class="timeline-summary">Scoped and initiated internal AI tooling program for ServiceNow SAMs. Building Claude-powered P1/P2 productivity workflows within enterprise constraints.</div>
+      </div>
+      <div class="timeline-item" style="animation-delay:0.2s">
+        <div class="timeline-dot"></div>
+        <div class="timeline-date">2026</div>
+        <div class="timeline-name">JLO Collective LLC — Founded</div>
+        <div class="timeline-summary">JLO Collective established. Brand system, CEO dashboard, and SKILL.md framework built. Multi-venture operating infrastructure launched.</div>
+      </div>
+      <div class="timeline-item" style="animation-delay:0.24s">
+        <div class="timeline-dot"></div>
+        <div class="timeline-date">2026</div>
+        <div class="timeline-name">SIGND.AI — Concept & Build</div>
+        <div class="timeline-summary">AI product conceived, scoped, and built from scratch. Agent design, system prompting, user research with DJ, and pipeline architecture completed.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PORTFOLIO EXPORT VIEW -->
+  <div class="view" id="view-export">
+    <div class="export-panel">
+      <div class="export-title">Portfolio Export</div>
+      <div class="export-sub">Generate your portfolio in the format you need — resume bullets, LinkedIn blocks, cover letter narrative, or a full AI Enablement summary for job applications.</div>
+      <div class="narrative-block">
+        <div class="narrative-label">Master Narrative — AI Enablement</div>
+        <div class="narrative-text">Jonathan Lopez is an AI Enablement practitioner with hands-on experience building AI-powered tools, workflows, and products across enterprise (ServiceNow), startup (JLO Collective / SIGND.AI), nonprofit SaaS (KingdomOS), and operational contexts. His work spans prompt engineering, workflow automation, agent design, and full-stack AI product development — applied directly to real business outcomes including SAM productivity gains, real estate lead conversion, church management automation, and enterprise internal tooling. He has built proprietary AI operating frameworks from scratch and shipped production-grade products with live users.</div>
+      </div>
+      <div class="export-format-grid">
+        <div class="format-card" onclick="copyFormat('resume')"><div class="format-name">Resume Bullets</div><div class="format-desc">3 career-grade bullet points per project. Ready to paste into your resume.</div></div>
+        <div class="format-card" onclick="copyFormat('linkedin')"><div class="format-name">LinkedIn Summary</div><div class="format-desc">Portfolio block formatted for LinkedIn's About or Featured section.</div></div>
+        <div class="format-card" onclick="copyFormat('cover')"><div class="format-name">Cover Letter Block</div><div class="format-desc">Narrative paragraph for cover letters. Bring this to Claude to customize per role.</div></div>
+        <div class="format-card" onclick="copyFormat('full')"><div class="format-name">Full Summary</div><div class="format-desc">Complete portfolio dump — all projects, all categories, all impact metrics.</div></div>
+      </div>
+      <div id="export-output" style="display:none; padding:24px; background:rgba(16,185,129,0.04); border: 1px solid rgba(16,185,129,0.15); border-radius:8px; font-family:'JetBrains Mono',monospace; font-size:12px; line-height:1.8; color:var(--off-white); white-space:pre-wrap;"></div>
+      <div style="margin-top:24px; padding:16px; background:rgba(245,158,11,0.04); border:1px solid rgba(245,158,11,0.15); border-radius:8px;">
+        <div style="font-family:'JetBrains Mono',monospace; font-size:9px; letter-spacing:2px; color:var(--gold); margin-bottom:8px;">💡 PRO TIP</div>
+        <div style="font-size:12px; color:rgba(244,244,245,0.7); line-height:1.6;">Take your exported text to the Portfolio Hub Claude Project and say: "Customize this for a [Role Title] role at [Company Name]." Claude will tailor the narrative, reorder project priorities, and sharpen the impact language for the specific opportunity.</div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<script>
+  function switchView(viewId, el) {
+    document.querySelectorAll('.view').forEach(v => v.classList.remove('active'));
+    document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
+    document.getElementById('view-' + viewId).classList.add('active');
+    el.classList.add('active');
+  }
+
+  function filterCards(category, el) {
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    el.classList.add('active');
+    const cards = document.querySelectorAll('.project-card[data-category]');
+    cards.forEach(card => {
+      if (category === 'all') { card.style.display = ''; }
+      else { card.style.display = card.dataset.category.includes(category) ? '' : 'none'; }
+    });
+  }
+
+  const formats = {
+    resume: `RESUME BULLETS — AI ENABLEMENT PORTFOLIO
+==========================================
+
+SIGND.AI — Founder & AI Product Architect (JLO Collective LLC)
+• Designed and shipped an AI-powered real estate lead conversion platform from concept to live beta, leveraging Claude AI for intelligent SMS outreach, lead nurturing automation, and pipeline management
+• Conducted hands-on user research with target users to validate product-market fit and iterate agent prompting in real-time
+• Built TCPA-compliant outreach infrastructure and measured conversion performance as north star metric
+
+ServiceNow Internal AI Enablement Initiative
+• Initiated and led internal AI tooling program for ServiceNow Support Account Managers, building Claude-powered workflows to reduce manual effort on P1/P2 critical case management
+• Designed prompt engineering frameworks and automation sequences resulting in quantified productivity gains for SAM team
+• Deployed enterprise-grade AI tools within ServiceNow's existing environment constraints — no infrastructure overhead
+
+KingdomOS — Founder & Full-Stack AI Product Architect (JLO Collective LLC)
+• Built and deployed a multi-tenant church management SaaS platform from scratch — Node.js + React + PostgreSQL live on Railway and Vercel with JWT auth and row-level tenant isolation
+• Embedded Claude AI (Haiku + Sonnet) for role-scoped assistant, task classification, and Morning Brief automation (BullMQ cron + 24-file commit)
+• Architected nonprofit revenue model with 501(c)(3) roadmap, Stripe subscription tiers, and Kingdom allocation model directing 50%+ net proceeds to mission initiatives
+
+JLO Collective AI Operating System
+• Architected a proprietary Claude SKILL.md framework governing 10+ production skills across multiple Claude Projects, enabling CEO-level output discipline at startup velocity
+• Built brand enforcement automation, session discipline protocols, and multi-project orchestration systems from scratch
+• Demonstrated end-to-end AI systems design: from skill specification to deployment to quality gating`,
+
+    linkedin: `🤖 AI ENABLEMENT PORTFOLIO — Jonathan Lopez
+
+🔹 SIGND.AI (Founder | JLO Collective LLC)
+AI-powered real estate outreach platform, live in beta. Built the full stack: agent design, SMS automation, user research, TCPA compliance. Measuring first attributable deal close.
+
+🔹 ServiceNow SAM AI Tooling (Internal Initiative)
+Pioneered an AI enablement program for Support Account Managers at ServiceNow. Claude-powered P1/P2 workflows with measurable productivity impact — deployed within enterprise constraints.
+
+🔹 KingdomOS (Founder | JLO Collective LLC)
+Kingdom-first church management SaaS — live on Railway + Vercel. Full-stack build: Node.js, React, PostgreSQL, BullMQ, Claude AI embedded. Phase 1: Stripe billing. Nonprofit 501(c)(3) roadmap with 50%+ net proceeds to Kingdom initiatives.
+
+🔹 JLO AI Operating System
+Proprietary SKILL.md framework with 10+ production skills for multi-project AI orchestration. Includes brand enforcement automation, session discipline, and quality gating protocols.
+
+📍 Open to AI Enablement, AI Product, and Prompt Engineering roles.
+📩 DM to connect.`,
+
+    cover: `COVER LETTER PORTFOLIO PARAGRAPH
+=================================
+
+Over the past year, I've built a hands-on AI Enablement practice spanning enterprise tooling, startup product development, nonprofit SaaS, and systems design. At ServiceNow, I identified a productivity gap for Support Account Managers managing P1/P2 critical cases and built an internal Claude-powered workflow program to address it — delivering measurable time savings with no infrastructure overhead. In parallel, I founded SIGND.AI under JLO Collective LLC, where I designed and shipped an AI-powered real estate outreach product from the ground up — conducting user research, engineering agent prompts, building TCPA-compliant automation pipelines, and running a live beta with real users. I also built KingdomOS — a full-stack church management SaaS platform (Node.js + React + PostgreSQL, live on Railway and Vercel) with Claude AI embedded for automation, task classification, and role-scoped assistance — targeting a nonprofit 501(c)(3) model at scale. Across all contexts, I've developed a proprietary AI operating system using a custom SKILL.md framework that enforces quality, consistency, and velocity across multiple concurrent AI projects.
+
+[Customize this paragraph for the specific role — bring it to Claude with the job description.]`,
+
+    full: `FULL PORTFOLIO SUMMARY — JONATHAN LOPEZ
+AI Enablement | Entrepreneurial | Enterprise | Nonprofit SaaS
+=========================================
+
+TOTAL PROJECTS: 4
+ACTIVE: 4 | COMPLETED: 0
+AI ENABLEMENT TAGGED: 4 | PUBLIC: 3
+
+─────────────────────────────────────────
+PROJECT 1: SIGND.AI
+─────────────────────────────────────────
+Category:    Entrepreneurial / AI Enablement
+Status:      Active (Beta)
+Started:     2026
+Tools:       Claude AI, SMS Automation, Lead Conversion, TCPA Compliance
+Impact:      Live beta, measuring first attributable deal close
+Summary:     AI-powered real estate outreach and lead conversion platform. Built for non-technical agents. Automates SMS follow-up and lead nurturing with TCPA-compliant pipelines.
+Public:      Yes
+
+─────────────────────────────────────────
+PROJECT 2: ServiceNow SAM AI Tooling
+─────────────────────────────────────────
+Category:    ServiceNow / AI Enablement
+Status:      Active
+Started:     2026
+Tools:       Claude Enterprise, Prompt Engineering, Workflow Automation
+Impact:      Quantified P1/P2 case prep time reduction for SAM team
+Summary:     Internal AI tooling initiative for ServiceNow Support Account Managers. Builds Claude-powered workflows to reduce manual effort on high-priority case management.
+Public:      No (internal enterprise project)
+
+─────────────────────────────────────────
+PROJECT 3: JLO Collective CEO Ops / AI OS
+─────────────────────────────────────────
+Category:    Entrepreneurial / AI Enablement / Ops
+Status:      Active
+Started:     2026
+Tools:       Claude AI, HTML/CSS/JS, SKILL.md Framework, Brand Automation
+Impact:      10+ production skills; CEO-level multi-venture execution at velocity
+Summary:     Proprietary AI operating system for JLO Collective. Includes brand enforcement, session discipline, quality gating, and multi-project orchestration framework.
+Public:      Yes (design/framework layer only)
+
+─────────────────────────────────────────
+PROJECT 4: KINGDOMOS
+─────────────────────────────────────────
+Category:    Entrepreneurial / AI Enablement / Nonprofit SaaS
+Status:      Active
+Started:     2026
+Tools:       Claude AI (Haiku + Sonnet), Node.js + TypeScript, React, Prisma + PostgreSQL, Stripe, Twilio, Railway, Vercel, BullMQ, S3
+Impact:      Live platform (Railway + Vercel). Core features shipped: church registration, member directory, family management, Morning Brief automation. Phase 1 exit: Stripe billing.
+Summary:     Kingdom-first church management SaaS. Multi-tenant, role-scoped, nonprofit model. 50%+ net proceeds to Kingdom initiatives (homeless outreach, church planting, international adoption, global missions). Targeting standalone 501(c)(3) filing at scale.
+Public:      Yes (product vision + architecture — no internal financials)`
+  };
+
+  function copyFormat(type) {
+    const output = document.getElementById('export-output');
+    output.style.display = 'block';
+    output.textContent = formats[type];
+    output.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    navigator.clipboard.writeText(formats[type]).catch(() => {});
+  }
+
+  function animateCount(el, target) {
+    let current = 0;
+    const step = target / 20;
+    const timer = setInterval(() => {
+      current = Math.min(current + step, target);
+      el.textContent = Math.floor(current);
+      if (current >= target) clearInterval(timer);
+    }, 40);
+  }
+
+  document.querySelectorAll('.stat-value[id]').forEach(el => {
+    animateCount(el, parseInt(el.textContent));
+  });
+</script>
+</body>
+</html>
